@@ -1,7 +1,8 @@
 LuPA - Lucro e Performance em Análise
 LuPA é uma aplicação web desenvolvida como parte do Projeto Interdisciplinar (PIN), projetada para ser um painel de controle financeiro completo para pequenos comércios, com foco em clareza, análise e tomada de decisão estratégica.
 
-🎯 O Problema
+🎯 O Problema:
+
 Pequenos lojistas frequentemente enfrentam dificuldades para obter uma visão clara da saúde financeira de seus negócios. Processos manuais, planilhas complexas e a falta de ferramentas integradas resultam em:
 
 Perda de tempo com fechamentos de caixa.
@@ -14,7 +15,8 @@ Falta de dados para decisões estratégicas sobre compras e precificação.
 
 O LuPA foi criado para resolver esses problemas, transformando dados brutos em insights visuais e acionáveis.
 
-✨ Funcionalidades Principais
+✨ Funcionalidades Principais:
+
 Dashboard Intuitivo: Uma visão geral e centralizada dos indicadores mais importantes: faturamento bruto, custos totais, lucro líquido, contas a pagar e a receber.
 
 Análise de Performance: Gráficos e tabelas que detalham a performance do negócio, incluindo:
@@ -29,9 +31,9 @@ Configuração Flexível: Painel de administração para customizar taxas de pag
 
 Importação/Exportação: Funcionalidade para exportar todos os dados para um arquivo .csv e importar dados para a aplicação, facilitando backups e a migração de informações.
 
-[ÁREA PARA PRINT DO DASHBOARD]
 
-🛠️ Tecnologias Utilizadas
+🛠️ Tecnologias Utilizadas:
+
 Frontend: Angular
 
 Estilização: Tailwind CSS
@@ -40,7 +42,8 @@ Gráficos: Chart.js
 
 Manipulação de Planilhas: SheetJS (xlsx)
 
-🚀 Como Rodar o Projeto Localmente
+🚀 Como Rodar o Projeto Localmente:
+
 Clone o repositório:
 
 git clone https://github.com/seu-usuario/gestor-loja-angular.git
