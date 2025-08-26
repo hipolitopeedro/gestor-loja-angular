@@ -1,59 +1,60 @@
-# GestorLojaAngular
+LuPA - Lucro e Performance em Análise
+LuPA é uma aplicação web desenvolvida como parte do Projeto Interdisciplinar (PIN), projetada para ser um painel de controle financeiro completo para pequenos comércios, com foco em clareza, análise e tomada de decisão estratégica.
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 20.2.0.
+🎯 O Problema
+Pequenos lojistas frequentemente enfrentam dificuldades para obter uma visão clara da saúde financeira de seus negócios. Processos manuais, planilhas complexas e a falta de ferramentas integradas resultam em:
 
-## Development server
+Perda de tempo com fechamentos de caixa.
 
-To start a local development server, run:
+Dificuldade em calcular o lucro líquido real após taxas de pagamento.
 
-```bash
+Incerteza sobre o fluxo de caixa e a gestão de contas a pagar/receber.
+
+Falta de dados para decisões estratégicas sobre compras e precificação.
+
+O LuPA foi criado para resolver esses problemas, transformando dados brutos em insights visuais e acionáveis.
+
+✨ Funcionalidades Principais
+Dashboard Intuitivo: Uma visão geral e centralizada dos indicadores mais importantes: faturamento bruto, custos totais, lucro líquido, contas a pagar e a receber.
+
+Análise de Performance: Gráficos e tabelas que detalham a performance do negócio, incluindo:
+
+Um gráfico dinâmico que alterna entre a visualização de Despesas e Lucro Bruto por categoria.
+
+Uma tabela de análise de lucro por categoria de produto, revelando os itens mais e menos rentáveis.
+
+Controle de Contas: Módulos dedicados para gerenciar Boletos a Pagar e o Controle de Fiado (renomeado para Gastos e Lucros).
+
+Configuração Flexível: Painel de administração para customizar taxas de pagamento (por bandeira de cartão), prazos de recebimento e categorias de despesas e produtos.
+
+Importação/Exportação: Funcionalidade para exportar todos os dados para um arquivo .csv e importar dados para a aplicação, facilitando backups e a migração de informações.
+
+[ÁREA PARA PRINT DO DASHBOARD]
+
+🛠️ Tecnologias Utilizadas
+Frontend: Angular
+
+Estilização: Tailwind CSS
+
+Gráficos: Chart.js
+
+Manipulação de Planilhas: SheetJS (xlsx)
+
+🚀 Como Rodar o Projeto Localmente
+Clone o repositório:
+
+git clone https://github.com/seu-usuario/gestor-loja-angular.git
+
+Navegue até a pasta do projeto:
+
+cd gestor-loja-angular
+
+Instale as dependências:
+
+npm install
+
+Inicie o servidor de desenvolvimento:
+
 ng serve
-```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
-
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
-```
-
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
-
-```bash
-ng generate --help
-```
-
-## Building
-
-To build the project run:
-
-```bash
-ng build
-```
-
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
-
-## Running unit tests
-
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
-
-```bash
-ng test
-```
-
-## Running end-to-end tests
-
-For end-to-end (e2e) testing, run:
-
-```bash
-ng e2e
-```
-
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
-
-## Additional Resources
-
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Abra seu navegador e acesse http://localhost:4200/.
