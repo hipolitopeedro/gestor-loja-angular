@@ -1,0 +1,11 @@
+/*
+* ARQUIVO: src/styles.css
+*/
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.font-logo {
+    font-family: 'Lexend', sans-serif;
+}

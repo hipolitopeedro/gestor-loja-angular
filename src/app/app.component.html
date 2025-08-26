@@ -1,0 +1,154 @@
+<!-- 
+ARQUIVO: src/app/app.component.html
+-->
+<div class="bg-violet-50 min-h-screen font-sans">
+  
+  <!-- LANDING PAGE -->
+  <div *ngIf="!isLoggedIn">
+    <header class="bg-violet-600 text-white fixed top-0 left-0 right-0 z-20 shadow-md">
+      <div class="container mx-auto px-6 py-4 flex justify-between items-center">
+        <div class="flex items-center">
+          <svg class="h-8 w-8 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg>
+          <h1 class="text-2xl font-bold font-logo">{{ appName }}</h1>
+        </div>
+        <div class="flex items-center space-x-2">
+          <button (click)="setPagina('login')" class="hover:bg-violet-700 px-3 py-1 rounded-md">Login</button>
+          <button (click)="setPagina('cadastro')" class="bg-white text-violet-600 px-4 py-2 rounded-md hover:bg-violet-100 font-semibold">Cadastre-se</button>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <!-- Seção Login -->
+      <div *ngIf="pagina === 'login'" class="flex items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+          <h2 class="text-2xl font-bold text-center mb-6">Login</h2>
+          <form (submit)="handleLogin(); $event.preventDefault()" class="space-y-4">
+            <input type="email" placeholder="Email" class="p-2 border rounded w-full" value="demo@lupa.com" />
+            <input type="password" placeholder="Senha" class="p-2 border rounded w-full" value="123456" />
+            <button type="submit" class="w-full bg-violet-600 text-white p-2 rounded hover:bg-violet-700">Entrar</button>
+            <p class="text-center text-sm">Não tem uma conta? <a href="#" (click)="setPagina('cadastro'); $event.preventDefault()" class="text-violet-600 hover:underline">Cadastre-se</a></p>
+          </form>
+        </div>
+      </div>
+      <!-- Seção Cadastro -->
+      <div *ngIf="pagina === 'cadastro'" class="flex items-center justify-center h-screen">
+        <div class="bg-white p-8 rounded-lg shadow-lg w-full max-w-sm">
+          <h2 class="text-2xl font-bold text-center mb-6">Crie sua Conta</h2>
+          <form (submit)="handleLogin(); $event.preventDefault()" class="space-y-4">
+            <input type="text" placeholder="Nome" class="p-2 border rounded w-full" />
+            <input type="email" placeholder="Email" class="p-2 border rounded w-full" />
+            <input type="password" placeholder="Senha" class="p-2 border rounded w-full" />
+            <button type="submit" class="w-full bg-violet-600 text-white p-2 rounded hover:bg-violet-700">Criar Conta</button>
+            <p class="text-center text-sm">Já tem uma conta? <a href="#" (click)="setPagina('login'); $event.preventDefault()" class="text-violet-600 hover:underline">Faça login</a></p>
+          </form>
+        </div>
+      </div>
+
+      <!-- Seção Principal da Landing Page -->
+      <div *ngIf="pagina === 'landing'">
+        <section class="bg-gradient-to-b from-violet-100 to-violet-50 pt-32 pb-16 text-center px-4">
+          <div class="container mx-auto">
+            <h1 class="text-5xl font-bold text-slate-800">Tenha o controle total das suas finanças.</h1>
+            <p class="text-lg text-slate-600 mt-4 max-w-2xl mx-auto">LuPA é a ferramenta que transforma seus dados de vendas em insights poderosos, ajudando você a entender seu lucro e a performance do seu negócio.</p>
+            <button (click)="setPagina('cadastro')" class="mt-8 bg-violet-600 text-white px-8 py-3 rounded-md text-lg font-semibold hover:bg-violet-700 transition-transform hover:scale-105">Comece a usar gratuitamente</button>
+          </div>
+        </section>
+        
+        <section id="sobre" class="py-16 bg-white">
+          <div class="container mx-auto px-6">
+            <h2 class="text-3xl font-bold text-center text-slate-800 mb-12">Tudo que você precisa para uma gestão inteligente</h2>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 text-center">
+              <div><div class="text-violet-600 mb-4 inline-block"><svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"/></svg></div><h3 class="text-xl font-semibold mb-2">Dashboard Intuitivo</h3><p class="text-slate-600">Visualize seu faturamento, custos e lucro em um painel claro e objetivo.</p></div>
+              <div><div class="text-violet-600 mb-4 inline-block"><svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 9V7a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2m2 4h10a2 2 0 002-2v-6a2 2 0 00-2-2H9a2 2 0 00-2 2v6a2 2 0 002 2zm7-5a2 2 0 11-4 0 2 2 0 014 0z"/></svg></div><h3 class="text-xl font-semibold mb-2">Gastos e Lucros</h3><p class="text-slate-600">Gerencie contas a pagar e a receber de forma simples e eficaz.</p></div>
+              <div><div class="text-violet-600 mb-4 inline-block"><svg class="h-12 w-12" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg></div><h3 class="text-xl font-semibold mb-2">Análise Inteligente</h3><p class="text-slate-600">Painéis e gráficos que revelam a performance real da sua loja.</p></div>
+            </div>
+          </div>
+        </section>
+        <footer class="bg-slate-800 text-white py-8">
+            <div class="container mx-auto px-6 text-center">
+                <p>&copy; 2025 LuPA - Todos os direitos reservados.</p>
+            </div>
+        </footer>
+      </div>
+    </main>
+  </div>
+
+  <!-- DASHBOARD PRINCIPAL (visível após login) -->
+  <div *ngIf="isLoggedIn" class="flex flex-1">
+    <aside [ngClass]="{'translate-x-0': isSidebarOpen, '-translate-x-full': !isSidebarOpen}" class="fixed top-0 left-0 z-40 w-64 h-screen transition-transform md:relative md:translate-x-0" aria-label="Sidebar">
+      <div class="overflow-y-auto py-4 px-3 bg-violet-600 h-full flex flex-col justify-between">
+        <div>
+          <a href="#" (click)="setPagina('dashboard'); $event.preventDefault()" class="block mb-5 px-2 cursor-pointer"><div class="flex items-center"><svg class="h-8 w-8 text-white mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg><h2 class="text-3xl font-bold text-white font-logo">{{ appName }}</h2></div><p class="text-xs text-violet-300 mt-1">{{ appSubtitle }}</p></a>
+          <ul class="space-y-2">
+            <li><a href="#" (click)="setPagina('dashboard'); $event.preventDefault()" [ngClass]="{'bg-violet-700': pagina === 'dashboard'}" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6" /></svg><span class="ml-3">Dashboard</span></a></li>
+            <li><a href="#" (click)="setPagina('lancamentos'); $event.preventDefault()" [ngClass]="{'bg-violet-700': pagina === 'lancamentos'}" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 9v3m0 0v3m0-3h3m-3 0H9m12 0a9 9 0 11-18 0 9 9 0 0118 0z" /></svg><span class="ml-3">Lançamentos</span></a></li>
+            <li><a href="#" (click)="setPagina('boletos'); $event.preventDefault()" [ngClass]="{'bg-violet-700': pagina === 'boletos'}" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z" /></svg><span class="ml-3">Boletos a Pagar</span></a></li>
+            <li><a href="#" (click)="setPagina('fiado'); $event.preventDefault()" [ngClass]="{'bg-violet-700': pagina === 'fiado'}" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21a6 6 0 00-9-5.197m0 0A5.975 5.975 0 0112 13a5.975 5.975 0 013-1.197" /></svg><span class="ml-3">Gastos e Lucros</span></a></li>
+            <li><a href="#" (click)="setPagina('configuracoes'); $event.preventDefault()" [ngClass]="{'bg-violet-700': pagina === 'configuracoes'}" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z" /><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z" /></svg><span class="ml-3">Configurações</span></a></li>
+          </ul>
+        </div>
+        <div>
+           <a href="#" (click)="handleLogoff(); $event.preventDefault()" class="flex items-center p-2 text-base font-normal text-white rounded-lg hover:bg-violet-700">
+            <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1" /></svg>
+            <span class="ml-3">Sair</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+    <div class="flex-1">
+      <header class="fixed top-0 left-0 right-0 z-30 bg-white shadow-sm md:hidden">
+        <div class="flex justify-between items-center p-4">
+          <div class="flex items-center"><svg class="h-8 w-8 text-violet-600 mr-2" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" /></svg><h1 class="text-xl font-bold text-gray-900 font-logo">{{ appName }}</h1></div>
+          <button (click)="isSidebarOpen = !isSidebarOpen"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" /></svg></button>
+        </div>
+      </header>
+
+      <main class="p-4 sm:p-8 mt-16 md:mt-0">
+        <div [ngSwitch]="pagina">
+          <div *ngSwitchCase="'dashboard'">
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-4 mb-8">
+              <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-sm font-medium text-gray-500">Faturamento Bruto</h3><p class="mt-1 text-3xl font-semibold text-slate-800">R$ {{ metricas.faturamentoBruto.toFixed(2) }}</p></div>
+              <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-sm font-medium text-gray-500">Custos Totais</h3><p class="mt-1 text-3xl font-semibold text-rose-500">R$ {{ metricas.custosTotais.toFixed(2) }}</p></div>
+              <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-sm font-medium text-gray-500">Lucro Líquido</h3><p class="mt-1 text-3xl font-semibold" [ngClass]="{'text-emerald-500': metricas.lucroLiquido >= 0, 'text-rose-500': metricas.lucroLiquido < 0}">R$ {{ metricas.lucroLiquido.toFixed(2) }}</p></div>
+              <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-sm font-medium text-gray-500">A Receber (Fiado)</h3><p class="mt-1 text-3xl font-semibold text-orange-500">R$ {{ metricas.totalFiado.toFixed(2) }}</p></div>
+              <div class="bg-white p-6 rounded-lg shadow"><h3 class="text-sm font-medium text-gray-500">A Pagar (Boletos)</h3><p class="mt-1 text-3xl font-semibold text-amber-500">R$ {{ metricas.totalBoletos.toFixed(2) }}</p></div>
+            </div>
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+                <div class="lg:col-span-2 space-y-8">
+                    <!-- Gráfico -->
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <div class="flex justify-between items-center mb-4">
+                            <h2 class="text-xl font-semibold text-gray-800">Análise Gráfica</h2>
+                            <div class="flex space-x-1 bg-violet-100 p-1 rounded-md">
+                                <button (click)="toggleChartView()" [ngClass]="{'bg-white shadow': chartView === 'despesas'}" class="px-3 py-1 text-sm rounded-md">Despesas</button>
+                                <button (click)="toggleChartView()" [ngClass]="{'bg-white shadow': chartView === 'lucros'}" class="px-3 py-1 text-sm rounded-md">Lucros</button>
+                            </div>
+                        </div>
+                        <div class="h-80"><canvas id="myChart"></canvas></div>
+                    </div>
+                     <!-- Análise por Categoria -->
+                    <div class="bg-white p-6 rounded-lg shadow">
+                        <h2 class="text-xl font-semibold mb-4 text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 7h.01M7 3h5c.512 0 1.024.195 1.414.586l7 7a2 2 0 010 2.828l-5 5a2 2 0 01-2.828 0l-7-7A2 2 0 013 8V5a2 2 0 012-2z" /></svg><span class="ml-2">Análise por Categoria de Produto</span></h2>
+                        <div class="overflow-x-auto"><table class="w-full text-sm text-left text-gray-500"><thead class="text-xs text-gray-700 uppercase bg-violet-50"><tr><th scope="col" class="px-6 py-3">Categoria</th><th scope="col" class="px-6 py-3 text-right">Faturamento Bruto</th><th scope="col" class="px-6 py-3 text-right">Lucro Bruto (Est.)</th></tr></thead><tbody>
+                            <tr *ngFor="let cat of (analiseCategorias | keyvalue)">
+                                <th scope="row" class="px-6 py-4 font-medium text-gray-900">{{ cat.key }}</th>
+                                <td class="px-6 py-4 text-right">R$ {{ $any(cat.value).faturamento.toFixed(2) }}</td>
+                                <td class="px-6 py-4 text-right text-emerald-500 font-bold">R$ {{ $any(cat.value).lucroBruto.toFixed(2) }}</td>
+                            </tr>
+                        </tbody></table></div>
+                    </div>
+                </div>
+                <div class="space-y-8">
+                    <!-- Fluxo de Caixa -->
+                    <div class="bg-white p-6 rounded-lg shadow"><h2 class="text-xl font-semibold mb-4 text-gray-800 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" /></svg><span class="ml-2">Valores a Receber</span></h2><div class="space-y-3"><div class="flex justify-between items-baseline"><span class="text-gray-600">Hoje</span><span class="font-semibold text-lg text-emerald-500">R$ {{ previsoesFluxoCaixa.hoje.toFixed(2) }}</span></div><div class="flex justify-between items-baseline"><span class="text-gray-600">Amanhã</span><span class="font-semibold text-lg">R$ {{ previsoesFluxoCaixa.amanha.toFixed(2) }}</span></div><div class="flex justify-between items-baseline"><span class="text-gray-600">Próximos 7 dias</span><span class="font-semibold text-lg">R$ {{ previsoesFluxoCaixa.prox7dias.toFixed(2) }}</span></div><div class="flex justify-between items-baseline"><span class="text-gray-600">Próximos 30 dias</span><span class="font-semibold text-lg">R$ {{ previsoesFluxoCaixa.prox30dias.toFixed(2) }}</span></div></div></div>
+                </div>
+            </div>
+          </div>
+          <!-- Outras páginas aqui -->
+        </div>
+      </main>
+    </div>
+  </div>
+</div>
