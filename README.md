@@ -25,7 +25,7 @@ Um gráfico dinâmico que alterna entre a visualização de Despesas e Lucro Bru
 
 Uma tabela de análise de lucro por categoria de produto, revelando os itens mais e menos rentáveis.
 
-Controle de Contas: Módulos dedicados para gerenciar Boletos a Pagar e o Controle de Fiado (renomeado para Gastos e Lucros).
+Controle de Contas: Módulos dedicados para gerenciar Boletos a Pagar e o Controle de Fiado (Gastos e Lucros).
 
 Configuração Flexível: Painel de administração para customizar taxas de pagamento (por bandeira de cartão), prazos de recebimento e categorias de despesas e produtos.
 
