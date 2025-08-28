@@ -1,5 +1,5 @@
 LuPA - Lucro e Performance em Análise
-LuPA é uma aplicação web desenvolvida como parte do Projeto Interdisciplinar (PIN), projetada para ser um painel de controle financeiro completo para pequenos comércios, com foco em clareza, análise e tomada de decisão estratégica.
+LuPA é uma aplicação web desenvolvida como parte do Projeto Interdisciplinar (PIN), projetada para ser um painel de controle financeiro completo para pequenos comércios, com foco em clareza, análise e tomada de decisão estratégica. (Em desenvolvimento)
 
 🎯 O Problema:
 
